@@ -8,6 +8,7 @@ import { GeoLocation } from '@/models/location.interface';
 
 Vue.use(Vuex);
 
+// Plugin does not support FillColor declaration, too long for 4h to make from scratch :(
 export const ageColors = {
   40: '#00cb09',
   42: '#a4cb00',
