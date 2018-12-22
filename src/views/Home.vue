@@ -1,17 +1,25 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+  <main>
+    <Map :position="getCurrent.loc"/>
+    <Sidebar/>
+  </main>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import Map from '@/components/Map.vue';
+import Sidebar from '@/components/Sidebar.vue';
+import { mapGetters } from 'vuex';
 
 @Component({
   components: {
-    HelloWorld,
+    Map,
+    Sidebar,
+  },
+  computed: {
+    ...mapGetters([
+      'getCurrent',
+    ]),
   },
 })
 export default class Home extends Vue {}

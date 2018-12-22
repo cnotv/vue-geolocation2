@@ -1,4 +1,4 @@
-export interface Polygon {
+export interface LocationInfo {
   name: string;
   population: number;
   averageAge: number;

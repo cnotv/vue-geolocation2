@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import * as getters from './getters';
 
 Vue.use(Vuex);
 
@@ -14,7 +15,10 @@ export const AgeColors = {
 export default new Vuex.Store({
   state: {
     current: {
-      loc: [52.520008, 13.404954],
+      loc: {
+        lat: 52.520008,
+        lng: 13.404954,
+      },
     },
   },
   mutations: {
@@ -23,4 +27,5 @@ export default new Vuex.Store({
   actions: {
 
   },
+  getters,
 });
