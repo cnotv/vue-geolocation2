@@ -1,7 +1,10 @@
 <template>
   <main>
     <Map :position="getCurrent.loc"/>
-    <Sidebar/>
+    <Sidebar
+      v-if="getCurrent.info"
+      :info="getCurrent.info"
+    />
   </main>
 </template>
 

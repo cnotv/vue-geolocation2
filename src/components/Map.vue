@@ -6,18 +6,12 @@
     class="map"
     @click="loadPolygon($event)"
   >
-    <GmapMarker 
-      :position="position"
-    >
-    </GmapMarker>
-
-    <GmapCircle 
-      :center="position"
-      :editable="false"
-      :draggable="false"
-      @click="loadPolygon($event)"
-    ></GmapCircle>
-
+    <GmapPolygon
+      v-for="(item, i) of getPolygons"
+      :key="i"
+      :paths="item.paths"
+      @click="loadPolygonInfo(item)"
+    />
   </GmapMap>
 </template>
 
@@ -30,6 +24,7 @@ Vue.use(VueGoogleMaps, {
     key: 'AIzaSyBYUdSdKShrOJ2prZV9C304bnYFieYLFm0',
   },
 });
+
 export default {
   name: 'Map',
   props: [
@@ -49,7 +44,7 @@ export default {
     };
   },
   methods: {
-    loadPolygon(loc) {
+    loadPolygonInfo(loc) {
       // this.position = {
       //   lat: loc.latLng.lat(),
       //   lng: loc.latLng.lng(),
