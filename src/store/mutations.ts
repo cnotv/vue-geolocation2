@@ -15,8 +15,8 @@ export default {
         // TODO: Set class
         paths.push(
           {
-            lat: coordinate[0],
-            lng: coordinate[1],
+            lat: coordinate[1],
+            lng: coordinate[0],
           },
         );
       }
