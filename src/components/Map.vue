@@ -9,13 +9,14 @@
       v-for="(item, i) of polygons"
       :key="i"
       :paths="item.paths"
-      @click="loadPolygonInfo(item.info)"
+      @click="setCurrentPolygon(item.info)"
     />
   </GmapMap>
 </template>
 
 <script>
 import Vue from 'vue';
+import { mapActions } from 'vuex';
 import * as VueGoogleMaps from 'vue2-google-maps';
 Vue.use(VueGoogleMaps, {
   load: {
@@ -44,12 +45,9 @@ export default {
     };
   },
   methods: {
-    loadPolygonInfo(loc) {
-      // this.position = {
-      //   lat: loc.latLng.lat(),
-      //   lng: loc.latLng.lng(),
-      // };
-    },
+    ...mapActions([
+      'setCurrentPolygon',
+    ]),
   },
 };
 </script>

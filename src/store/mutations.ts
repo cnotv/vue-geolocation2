@@ -1,6 +1,6 @@
 import { ServiceGeo } from '@/models/geoApi.interface';
 import { State } from './state.interface';
-import { MapPolygon } from '@/models/polygon.interface';
+import { MapPolygon, MapPolygonInfo } from '@/models/polygon.interface';
 import { GeoLocation } from '@/models/location.interface';
 
 export default {
@@ -37,5 +37,9 @@ export default {
     }
 
     return state.polygons = polygons;
+  },
+
+  SET_CURRENT_POLYGONS: (state: State, info: MapPolygonInfo) => {
+    return state.current.info = info;
   },
 };

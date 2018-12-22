@@ -15,4 +15,9 @@ export default {
         );
     });
   },
+
+  // @ts-ignore:disable-next-line
+  setCurrentPolygon: ({ commit, state }, info) => {
+    commit('SET_CURRENT_POLYGON', info);
+  },
 };
