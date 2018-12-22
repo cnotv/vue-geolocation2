@@ -5,7 +5,7 @@
 ![App preview](./preview.jpg)
 
 
-# Application structure
+## Application structure
 
 ```
 /src
@@ -16,28 +16,40 @@
 ├── services/
 ├── store/
 ├── view/
+│   └── Home
 ├── main.ts
 └── router.ts
 ```
 
-## Components
+### Components
 
 Self explanatory: the components of the application
 
-## Models
+### Models
 
 Interfaces of the application. Further class implementation for a cleaner initialization will be placed here.
 
-## Services
+### Services
 
 Fake api request, here pointing to the JSON static file.
 Can be easily replaced with a real HTTP API request.
+This service allows us to simplify the data request and can be extended with query parameters.
 
-## Store
+For the request has been used Axios library rather than the fetch() DOM Api function.
+
+### Store
 
 Here are handled all the interactions with the data, from the store object tree generation, with actions, mutators and getters.
 
-## Router.ts
+There's mainly just 2 functionalities:
+* Load polygons
+* Set current polygons
+
+### Views
+
+At the moment containing only the home page.
+
+### Router.ts
 
 Router of the application. Further implementation with name as dynamic routing value to be used.
 
