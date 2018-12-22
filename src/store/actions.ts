@@ -8,7 +8,8 @@ export default {
       api.fetchData()
         .then(
           (response) => {
-            commit('LOAD_POLYGONS', response);
+            // @ts-ignore:disable-next-line
+            commit('LOAD_POLYGONS', response.data);
             resolve(response);
           },
           (error) => reject(error),
