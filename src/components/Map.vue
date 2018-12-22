@@ -4,13 +4,12 @@
     :zoom="14"
     :options="mapOptions"
     class="map"
-    @click="loadPolygon($event)"
   >
     <GmapPolygon
-      v-for="(item, i) of getPolygons"
+      v-for="(item, i) of polygons"
       :key="i"
       :paths="item.paths"
-      @click="loadPolygonInfo(item)"
+      @click="loadPolygonInfo(item.info)"
     />
   </GmapMap>
 </template>
@@ -29,16 +28,17 @@ export default {
   name: 'Map',
   props: [
     'position',
+    'polygons',
   ],
   data() {
     return {
       mapOptions: {
-        zoomControl: true,
+        zoomControl: false,
         mapTypeControl: false,
         scaleControl: false,
         streetViewControl: false,
         rotateControl: false,
-        fullscreenControl: true,
+        fullscreenControl: false,
         disableDefaultUi: false,
       },
     };

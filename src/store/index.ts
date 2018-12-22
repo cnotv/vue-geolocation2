@@ -1,6 +1,9 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import actions from './actions';
+import mutations from './mutations';
 import * as getters from './getters';
+
 import { GeoLocation } from '@/models/location.interface';
 
 Vue.use(Vuex);
@@ -26,11 +29,7 @@ export default new Vuex.Store({
     },
     polygons: [],
   },
-  mutations: {
-
-  },
-  actions: {
-
-  },
+  mutations,
+  actions,
   getters,
 });
