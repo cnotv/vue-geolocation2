@@ -22,6 +22,7 @@ Vue.use(VueGoogleMaps, {
   load: {
     // NOTE: This is something you probably dont want to save here.
     key: 'AIzaSyBzlLYISGjL_ovJwAehh6ydhB56fCCpPQw',
+    libraries: 'geometry',
   },
 });
 
@@ -34,29 +35,6 @@ export default {
   data() {
     return {
       infoWinOpen: false,
-      center:
-      {
-        lat: 13.403528,
-        lng: 52.540212,
-      },
-      poli:  [
-        {
-          lat: 13.403528,
-          lng: 52.540212,
-        },
-        {
-          lat: 13.403528,
-          lng: 52.5402121,
-        },
-        {
-          lat: 1.39,
-          lng: 52.5402121,
-        },
-        {
-          lat: 1.39,
-          lng: 52.540212,
-        },
-      ],
       mapOptions: {
         zoomControl: false,
         mapTypeControl: false,

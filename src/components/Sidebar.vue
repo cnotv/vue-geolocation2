@@ -5,10 +5,14 @@
       @click="setCurrentPolygon();"
     >X</button>
 
-    <p
+    <div
+      class="sidebar__labels"
       v-for="(value, key) in info"
       :key="key"
-    >{{ value }}</p>
+    >
+      <p class="sidebar__labels__title">{{ key }}:</p>
+      <p>{{ value }}</p>
+    </div>
   </aside>
 </template>
 
@@ -29,8 +33,9 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped>
+<style lang="scss">
 .sidebar {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   position: fixed;
   left: 0;
   top: 0;
@@ -38,5 +43,22 @@ export default Vue.extend({
   height: 100vh;
   background-color: white;
   padding: 1em;
+
+  &__button {
+    margin-left: calc(100% - 3em);
+    background: none;
+    border: 1px solid grey;
+    padding: 0.5em 1em;
+  }
+
+  &__labels {
+    & + & {
+      border-top: 1px solid grey
+    }
+
+    &__title {
+      font-weight: 700;
+    }
+  }
 }
 </style>

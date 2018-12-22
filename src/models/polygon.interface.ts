@@ -4,8 +4,8 @@ export interface MapPolygonInfo {
   name: string;
   population: number;
   averageAge: number;
-  area: number;
-  perimeter: number;
+  area: string;
+  perimeter: string;
 }
 
 export interface MapPolygon {
