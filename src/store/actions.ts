@@ -18,7 +18,7 @@ export default {
   },
 
   // @ts-ignore:disable-next-line
-  setCurrentPolygon: ({ commit, state }, info) => {
+  setCurrentPolygon: ({ commit }, info) => {
     commit('SET_CURRENT_POLYGON', info);
   },
 };

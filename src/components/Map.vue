@@ -1,27 +1,27 @@
 <template>
   <GmapMap
     :center="position"
-    :zoom="14"
+    :zoom="11"
     :options="mapOptions"
     class="map"
   >
     <GmapPolygon
       v-for="(item, i) of polygons"
       :key="i"
-      :paths="item.paths"
-      @click="setCurrentPolygon(item.info)"
+      :path="item.paths"
+      @click="setCurrentPolygon(item.info);"
     />
   </GmapMap>
 </template>
 
 <script>
 import Vue from 'vue';
-import { mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import * as VueGoogleMaps from 'vue2-google-maps';
 Vue.use(VueGoogleMaps, {
   load: {
     // NOTE: This is something you probably dont want to save here.
-    key: 'AIzaSyBYUdSdKShrOJ2prZV9C304bnYFieYLFm0',
+    key: 'AIzaSyBzlLYISGjL_ovJwAehh6ydhB56fCCpPQw',
   },
 });
 
@@ -33,6 +33,30 @@ export default {
   ],
   data() {
     return {
+      infoWinOpen: false,
+      center:
+      {
+        lat: 13.403528,
+        lng: 52.540212,
+      },
+      poli:  [
+        {
+          lat: 13.403528,
+          lng: 52.540212,
+        },
+        {
+          lat: 13.403528,
+          lng: 52.5402121,
+        },
+        {
+          lat: 1.39,
+          lng: 52.5402121,
+        },
+        {
+          lat: 1.39,
+          lng: 52.540212,
+        },
+      ],
       mapOptions: {
         zoomControl: false,
         mapTypeControl: false,
@@ -43,6 +67,11 @@ export default {
         disableDefaultUi: false,
       },
     };
+  },
+  computed: {
+    ...mapGetters([
+      'getCurrent',
+    ]),
   },
   methods: {
     ...mapActions([

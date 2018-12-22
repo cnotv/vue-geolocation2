@@ -39,7 +39,7 @@ export default {
     return state.polygons = polygons;
   },
 
-  SET_CURRENT_POLYGONS: (state: State, info: MapPolygonInfo) => {
+  SET_CURRENT_POLYGON: (state: State, info: MapPolygonInfo) => {
     return state.current.info = info;
   },
 };
